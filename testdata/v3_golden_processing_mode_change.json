@@ -1,0 +1,24 @@
+{
+  "$schema_comment": "chain_b2 cross-language v3 golden vector for processing_mode_change. Header (4) + body (6 fields alphabetical per pqc_05c v3 §4.3). Body coincides with consent_revoked — distinguished SOLELY by entry_type in the header (Sec F4 type-confusion resistance). Hashes baked from the Go encoder 2026-05-11.",
+  "domain_prefix_v3": "aleutian.chain.entry.v3:",
+  "entry_type": "processing_mode_change",
+  "vectors": [
+    {
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000001670726f63657373696e675f6d6f64655f6368616e676500000015616e63686f722d7369676e65722d323032362d76310000018f4df73e000000004061316232633364346535663630373138323933613462356336643765386639306131623263336434653566363037313832393361346235633664376538663930000000066b65792d76310000001f636f6e735f323032365f746573745f7375626a6563745f6772616e745f76310000000e7069695f696e7370656374696f6e0000002430313866613162332d633464352d373030302d383030302d313233343536373839306162",
+      "expected_content_hash_sha512_hex": "d3159a510fc411932c553931f85f43f79c7a8e400785fa9a2bb18c68f5b22f4bda097c4f19d51822f45e3e27cef27bd2a2eaacca58b80b53b5c0f9ee19a8171d",
+      "input": {
+        "actor_pseudonym": "a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90",
+        "actor_pseudonym_key_version": "key-v1",
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "consent_id": "cons_2026_test_subject_grant_v1",
+        "entry_type": "processing_mode_change",
+        "processing_mode_at_write": "pii_inspection",
+        "processing_mode_set_by_event_id": "018fa1b3-c4d5-7000-8000-1234567890ab",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "processing_mode_change"
+    }
+  ],
+  "version": 3
+}

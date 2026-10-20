@@ -1,0 +1,37 @@
+[
+  {
+    "name": "basic_empty_data",
+    "secret_hex": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "timestamp": 1706097600,
+    "payload": "{\"id\":\"evt_01h5a2b3\",\"type\":\"anchor.published\",\"data\":{}}",
+    "expected_signature": "t=1706097600,v1=9b050aec7ebcf5810395fd346e182af95a5750d61714f6dd0f5d03b00f1134b16da5bf77445cda2d5ce56bb0daa85675c7d8360d127056b892b5b481c07169f8"
+  },
+  {
+    "name": "unicode_in_payload",
+    "secret_hex": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210",
+    "timestamp": 1706097601,
+    "payload": "{\"id\":\"evt_01h5a2b4\",\"type\":\"anchor.published\",\"data\":{\"note\":\"中文\"}}",
+    "expected_signature": "t=1706097601,v1=282f5dc5df3244c3db51a9ee884502670af7809467af9822a623207ee524eb48cc2c02639c059631c2a2886cea98c10d49ccd6297bd818ce8cb9c6e8bb3ae23a"
+  },
+  {
+    "name": "special_characters",
+    "secret_hex": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+    "timestamp": 1706097602,
+    "payload": "{\"id\":\"evt_01h5a2b5\",\"data\":{\"url\":\"https://example.com/?a=1&b=2\"}}",
+    "expected_signature": "t=1706097602,v1=c5fa4bb559f9896df2d7cd065e94ee386b9e0b035d6fbcc95136eaa70796e215ab06adffb74a80b82abc86b9484c2d89764e8d345d85fa0fcc8009232ca02873"
+  },
+  {
+    "name": "empty_object",
+    "secret_hex": "1111111111111111111111111111111111111111111111111111111111111111",
+    "timestamp": 1706097603,
+    "payload": "{}",
+    "expected_signature": "t=1706097603,v1=69f32eb3e08a549b840af0f7a7e2696e4fa56f47681f99b67ac2ea0e7ced8eea68726828a99879fc1ad057de716a7f9417e8860be6b73cf45e4d6624f81b6b35"
+  },
+  {
+    "name": "max_timestamp",
+    "secret_hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+    "timestamp": 9999999999,
+    "payload": "{\"id\":\"evt_max\"}",
+    "expected_signature": "t=9999999999,v1=8f8eecc369783571254ea0dc05b4feab17cf8393eb8a8351dfb484194646217a91770e7e9dfe2b55befb84e02c27d08e400ba64dd28259b726c91dcad56fb4e6"
+  }
+]

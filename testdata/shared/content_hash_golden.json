@@ -1,0 +1,61 @@
+{
+  "version": "1",
+  "description": "Cross-language content hash golden vectors for HMAC-SHA512 keyed path",
+  "algorithm": "HMAC-SHA512(company_content_key, SHA-512(domain_prefix + request + 0x00 + response_or_blocks))",
+  "note": "HMAC input is the 64-byte raw SHA-512 digest, NOT the hex string. Python must decode hex before HMACing.",
+  "vectors": [
+    {
+      "id": "single-block-basic",
+      "company_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "request": "hello",
+      "response": "world",
+      "domain_prefix": "aleutian.content.v1:",
+      "sha512_hex": "a2851b86ca31ac1b60442c686d956f29f099fbbfdfb3c4b05476df5354c8cd1f653bb66540c50485d59c1a61dd4fcd8a0e064a8181cb8e49559dd8f20b30ecb5",
+      "expected_content_hash": "d1bd202af1210087d7aa3120ea22c19f3ae5dbfd8a34f6a8333f66b3725030176e939486af29d478097058e6ffbadf4bbc22bb41f050c8980b26200725609914"
+    },
+    {
+      "id": "single-block-unicode",
+      "company_key_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "request": "什么是递归？",
+      "response": "递归是指函数调用自身。例如：f(n) = n * f(n-1) 🔁",
+      "domain_prefix": "aleutian.content.v1:",
+      "sha512_hex": "a7891e64d25395f1a9046a26b103002e1c7c673f0bcf8dd235571e1033a2f06dda420eadaf3f1b45a125766b360d6dbb15276ce3587487288961df92748d1452",
+      "expected_content_hash": "177618802e84e8e62ce8abef35c2cf4166844bce65553f404dd22ba89a8143b286322f6b8b65c14e85996a69638d05336b238b2e4a5ce3f9d74395706c0d82ea"
+    },
+    {
+      "id": "single-block-empty-response",
+      "company_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "request": "ping",
+      "domain_prefix": "aleutian.content.v1:",
+      "sha512_hex": "be706a94b2da0d0e1db4c8664a0254b22dd2b353ec90cfd87cfb44e63a4a8287eb88f0f987aec6511a0a11d40f0fbc368b837a4a0a6220c574cc410ce2cdce19",
+      "expected_content_hash": "909c628a25f4bf21d12fded53ea28d1fec49968bd243b0fe507916d110cccc162b74e186b30fd28b7eafb7269d4f5308a4dc7e235a89e883dc7c5138e6cb4a3b"
+    },
+    {
+      "id": "single-block-long-content",
+      "company_key_hex": "aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55aa55",
+      "request": "explain the concept of gradient descent in machine learning",
+      "response": "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively moving in the direction of steepest descent.",
+      "domain_prefix": "aleutian.content.v1:",
+      "sha512_hex": "055c6a3151d34c3db437f1a76fb209fa9605327ee1d247d69ad2f217557c4ffd9f76689ac5386273b0c447f262f4ad1ece4537e3a4b035b2cbec8b7bdb5af040",
+      "expected_content_hash": "78dcbce93935fa987e7fae0df5e8180a33d03accd19a691c924226eb3042fb463e518f9f7c6d07d0ff38f284abc04a48d805aa7aae2c073c00b494f0618d5699"
+    },
+    {
+      "id": "blocks-single-text",
+      "company_key_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "request": "run the deploy script",
+      "blocks": "[{\"type\":\"text\",\"name\":\"\",\"input\":\"\",\"text\":\"Running deploy...\"}]",
+      "domain_prefix": "aleutian.content.blocks.v1:",
+      "sha512_hex": "78ae3d2fcf877359f9ec94d8e1033a591f38abce12266a79d4abdbc2dd0e6eeab004542a26a7b817f2ece9213f5a39107b182a5ea636e3fc63dc0d2f9450b8be",
+      "expected_content_hash": "cc29fd948e6c3af1ab4d743d8fda4ddf42a8a309ea5499fd3fac8b171138a43bd80cde32c32fd6a5b610bcd6581d8cc2c3e737e763fe8dca448df59f3b2d2aab"
+    },
+    {
+      "id": "blocks-tool-use",
+      "company_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "request": "write a go main file",
+      "blocks": "[{\"type\":\"text\",\"name\":\"\",\"input\":\"\",\"text\":\"here is the code:\"},{\"type\":\"tool_use\",\"name\":\"write_file\",\"input\":\"{\\\"content\\\":\\\"package main\\\",\\\"path\\\":\\\"main.go\\\"}\",\"text\":\"\"}]",
+      "domain_prefix": "aleutian.content.blocks.v1:",
+      "sha512_hex": "9bd0f073eb8c7da5dcb762c82967a4c818ab2283c69eb7b5e5a350d104177f8a150d821b80f80a5e795097be40cd69e7a490b44100889f96181b59d8e700a39d",
+      "expected_content_hash": "b2a449f70081f7369909d1f7cab875facf3abe246b020d2b8d7795ed2cac4dee3f95194fa8ea858f4fb90629a3cf672aa9f0aeb50bef88f35270fdd01b10cada"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema_comment": "dsar_p4_polish_v1_0_cleanup #4 (2026-05-15) cross-language v3 golden vectors for sar_extended. See v3_golden_sar_intent.json for the file-format conventions. Hashes baked from Go encoder via TestBakeSARExtendedGolden.",
+  "domain_prefix_v3": "aleutian.chain.entry.v3:",
+  "entry_type": "sar_extended",
+  "vectors": [
+    {
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000c7361725f657874656e64656400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e000000019000c79c000000002430313866613162332d633464352d373030302d383030302d3132333435363738393061620000008066666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666660000001a3031484b37424242424242424242424242424242424242424242",
+      "expected_content_hash_sha512_hex": "1db720a084a7be66c7be950f25e2c1eb3ec7bb62a53f138c2a06d7675d48d9c8a66001a13510845b53c5ce5ca988cf4fd4aa7bcfd49038d30a2831a15a4fdcdf",
+      "input": {
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_extended",
+        "extended_due_at_ms": 1718000000000,
+        "intent_entry_id": "018fa1b3-c4d5-7000-8000-1234567890ab",
+        "reason_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "sar_extended"
+    },
+    {
+      "$comment": "pii_hmac_key_rotation_R4: versioned reason_hash leaf (pii_digest_key_version=sm:v1) emitted between intent_entry_id and reason_hash. Cross-language byte-identity (R6 review M2).",
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000c7361725f657874656e64656400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e000000018f4df73e000000002430313839306135642d616339362d373734622d626363652d62333032303939613830353700000005736d3a76310000008062626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262620000001a3031484b37424242424242424242424242424242424242424242",
+      "expected_content_hash_sha512_hex": "d50dc2aa7ee3570a414568d1004f5b019533df4dc6466ddb681de2ad960fdd904b1b78f05d5499d5c4bb5d090facaf28764839b8d1a82dc95ce743c1ca7d8ff2",
+      "input": {
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_extended",
+        "extended_due_at_ms": 1715000000000,
+        "intent_entry_id": "01890a5d-ac96-774b-bcce-b302099a8057",
+        "pii_digest_key_version": "sm:v1",
+        "reason_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "sar_extended_versioned"
+    }
+  ],
+  "version": 3
+}

@@ -1,0 +1,21 @@
+{
+  "$schema_comment": "chain_b cross-language v3 golden vectors for sar_acknowledged. See v3_golden_sar_intent.json for the file-format conventions. Hashes baked from Go encoder 2026-05-10.",
+  "domain_prefix_v3": "aleutian.chain.entry.v3:",
+  "entry_type": "sar_acknowledged",
+  "vectors": [
+    {
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b37414141414141414141414141414141414141414141000000107361725f61636b6e6f776c656467656400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e000000002430313866613162332d633464352d373030302d383030302d3132333435363738393061620000001a3031484b37424242424242424242424242424242424242424242",
+      "expected_content_hash_sha512_hex": "4367da6ee46bcafda03566b57a4ea34a2ab2a5dd6e68d6a1c55c423e18c08218c69d95516467b49cb52c16f1b249633efc07a259e69cefdb1a2e90fb81952af7",
+      "input": {
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_acknowledged",
+        "intent_entry_id": "018fa1b3-c4d5-7000-8000-1234567890ab",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "sar_acknowledged"
+    }
+  ],
+  "version": 3
+}

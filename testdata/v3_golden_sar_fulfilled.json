@@ -1,0 +1,46 @@
+{
+  "$schema_comment": "chain_b cross-language v3 golden vectors for sar_fulfilled. Two vectors cover the access (tombstone_count=0, certificate_id empty) and erasure (tombstone_count>0, certificate_id present) shapes. See v3_golden_sar_intent.json for file-format conventions. Hashes baked from Go encoder 2026-05-16 after dsar_fulfill_b_pre_02e added certificate_id as alphabetical-first body field (7 body fields total). manifest_root values are 128 hex chars (SHA-512 per OQ-8 hardening 2026-05-10).",
+  "domain_prefix_v3": "aleutian.chain.entry.v3:",
+  "entry_type": "sar_fulfilled",
+  "vectors": [
+    {
+      "$comment": "Access fulfillment: tombstone_count=0, certificate_id empty (encoded as 0-length prefix). legal_basis='art_15_access'.",
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000d7361725f66756c66696c6c656400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e0000000000000000066163636573730000002430313866613162332d633464352d373030302d383030302d3132333435363738393061620000000d6172745f31355f6163636573730000008063636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363636363630000001a3031484b374242424242424242424242424242424242424242420000000000000000",
+      "expected_content_hash_sha512_hex": "e358b102d71a488eef1df24410c53bd49c2da60408617448d5862d51ed5202f5b85bfb93f6549c2c6ab60092280d7e8346d91bec2eec5e4281fcde7d4544c2cc",
+      "input": {
+        "certificate_id": "",
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_fulfilled",
+        "fulfillment_kind": "access",
+        "intent_entry_id": "018fa1b3-c4d5-7000-8000-1234567890ab",
+        "legal_basis": "art_15_access",
+        "manifest_root": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000,
+        "tombstone_count": 0
+      },
+      "name": "sar_fulfilled_access"
+    },
+    {
+      "$comment": "Erasure fulfillment: tombstone_count=42, certificate_id is a canonical-shape cert_<32-hex>. legal_basis='art_17_erasure'.",
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000d7361725f66756c66696c6c656400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e0000000025636572745f616161616161616161616161616161616161616161616161616161616161616100000007657261737572650000002430313866613162332d633464352d373030302d383030302d3132333435363738393061620000000e6172745f31375f657261737572650000008064646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464640000001a3031484b37424242424242424242424242424242424242424242000000000000002a",
+      "expected_content_hash_sha512_hex": "36dee5464297454779c0459b09d960f61b75ad92a6c2e04e290c98f711b1bfe09ca9796c4c56e68044aa0d7e59929cbb26f0388821420939eee754c68bcda147",
+      "input": {
+        "certificate_id": "cert_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_fulfilled",
+        "fulfillment_kind": "erasure",
+        "intent_entry_id": "018fa1b3-c4d5-7000-8000-1234567890ab",
+        "legal_basis": "art_17_erasure",
+        "manifest_root": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000,
+        "tombstone_count": 42
+      },
+      "name": "sar_fulfilled_erasure"
+    }
+  ],
+  "version": 3
+}

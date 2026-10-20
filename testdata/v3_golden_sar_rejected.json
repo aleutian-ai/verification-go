@@ -1,0 +1,40 @@
+{
+  "$schema_comment": "chain_b cross-language v3 golden vectors for sar_rejected. See v3_golden_sar_intent.json for file-format conventions. Hashes baked from Go encoder 2026-05-10. rationale_hash is REQUIRED non-empty (rejection without rationale is invalid).",
+  "domain_prefix_v3": "aleutian.chain.entry.v3:",
+  "entry_type": "sar_rejected",
+  "vectors": [
+    {
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000c7361725f72656a656374656400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e000000002430313866613162332d633464352d373030302d383030302d313233343536373839306162000000206172745f31375f335f625f66726565646f6d5f6f665f65787072657373696f6e0000008065656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565656565650000001a3031484b37424242424242424242424242424242424242424242",
+      "expected_content_hash_sha512_hex": "8b883803fdf2ed133d21a596be350bfa374174be9b6b406ee903be903a61256eac38cb592c1f6bdc90f435c8d0133199920be884bc0ea9c26c3db52e915115cc",
+      "input": {
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_rejected",
+        "intent_entry_id": "018fa1b3-c4d5-7000-8000-1234567890ab",
+        "legal_basis": "art_17_3_b_freedom_of_expression",
+        "rationale_hash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "sar_rejected"
+    },
+    {
+      "$comment": "pii_hmac_key_rotation_R4: versioned rationale_hash leaf (pii_digest_key_version=sm:v1) emitted between legal_basis and rationale_hash. Cross-language byte-identity (R6 review M2).",
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000c7361725f72656a656374656400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e000000002430313839306135642d616339362d373734622d626363652d623330323039396138303537000000156172745f31375f335f6c6567616c5f636c61696d7300000005736d3a76310000008064646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464646464640000001a3031484b37424242424242424242424242424242424242424242",
+      "expected_content_hash_sha512_hex": "6aaede462efca0c8b90f4ef9bd22a33152091477cb3858c23307211de5eea00e72dc1dd0effe0073ded6a618149d0cb3c1d490a95af4c622e34c14fcaa88fd15",
+      "input": {
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_rejected",
+        "intent_entry_id": "01890a5d-ac96-774b-bcce-b302099a8057",
+        "legal_basis": "art_17_3_legal_claims",
+        "pii_digest_key_version": "sm:v1",
+        "rationale_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "sar_rejected_versioned"
+    }
+  ],
+  "version": 3
+}

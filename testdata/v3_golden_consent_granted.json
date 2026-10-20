@@ -1,0 +1,28 @@
+{
+  "$schema_comment": "chain_b2 cross-language v3 golden vector for consent_granted. Header (4) + body (10 fields alphabetical per pqc_05c v3 §4.1). Cross-language verifier ports (Python in chain_e, JS in chain_f) read this file and assert byte + hash equality on their re-encode. Hashes baked from the Go encoder 2026-05-11.",
+  "domain_prefix_v3": "aleutian.chain.entry.v3:",
+  "entry_type": "consent_granted",
+  "vectors": [
+    {
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000f636f6e73656e745f6772616e74656400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e000000004061316232633364346535663630373138323933613462356336643765386639306131623263336434653566363037313832393361346235633664376538663930000000066b65792d76310000001f636f6e735f323032365f746573745f7375626a6563745f6772616e745f76310000008061616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161610000008062626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262620000000476312e3000000196a5a86a000000000e7069695f696e7370656374696f6e0000002430313866613162332d633464352d373030302d383030302d313233343536373839306162",
+      "expected_content_hash_sha512_hex": "0939180b0ab01ca9b4e065cd4576c4a2796648c617477346027c536bd9dd8ba6d01e761015d447da701f5e4b3307b5502dbad9130909a7728e491a3456d04bd2",
+      "input": {
+        "actor_pseudonym": "a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90",
+        "actor_pseudonym_key_version": "key-v1",
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "consent_id": "cons_2026_test_subject_grant_v1",
+        "consent_rendered_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "consent_template_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "consent_text_version": "v1.0",
+        "entry_type": "consent_granted",
+        "expires_at_ms": 1746536000000,
+        "processing_mode_at_write": "pii_inspection",
+        "processing_mode_set_by_event_id": "018fa1b3-c4d5-7000-8000-1234567890ab",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "consent_granted"
+    }
+  ],
+  "version": 3
+}

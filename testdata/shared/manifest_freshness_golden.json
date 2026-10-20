@@ -1,0 +1,160 @@
+{
+  "description": "Cross-SDK golden vectors for trust-manifest freshness verdicts (chainlinker_modernization_12f_e / ADR-029 §D5). The Go, Python, and JS SDK freshness helpers MUST produce byte-identical verdict_line strings and identical age_days/stale/rollback_detected booleans for every case. v1 semantics: advisory report + warn, never hard-fail; rollback detection is stateful-only (last_seen_version < 0 => stateless, no rollback).",
+  "max_age_days": 30,
+  "cases": [
+    {
+      "name": "fresh_stateless",
+      "version": 7,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1783036800000,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 2,
+        "stale": false,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected."
+      }
+    },
+    {
+      "name": "boundary_exactly_30_days_not_stale",
+      "version": 7,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1785456000000,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 30,
+        "stale": false,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected."
+      }
+    },
+    {
+      "name": "stale_31_days_warns",
+      "version": 7,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1785542400000,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 31,
+        "stale": true,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected. [WARNING: manifest is 31 days old]",
+        "revocation_note": "Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected. [WARNING: manifest is 31 days old]"
+      }
+    },
+    {
+      "name": "stale_45_days_warns",
+      "version": 12,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1786752000000,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 45,
+        "stale": true,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v12 dated 2026-07-01 — a key revoked after that date is not reflected. [WARNING: manifest is 45 days old]",
+        "revocation_note": "Revocation checked against trust manifest v12 dated 2026-07-01 — a key revoked after that date is not reflected. [WARNING: manifest is 45 days old]"
+      }
+    },
+    {
+      "name": "rollback_stateful_lower_version",
+      "version": 6,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1783036800000,
+      "last_seen_version": 9,
+      "expect": {
+        "age_days": 2,
+        "stale": false,
+        "rollback_detected": true,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v6 dated 2026-07-01 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v6 dated 2026-07-01 — a key revoked after that date is not reflected."
+      }
+    },
+    {
+      "name": "stateless_low_version_no_rollback",
+      "version": 1,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1783036800000,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 2,
+        "stale": false,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v1 dated 2026-07-01 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v1 dated 2026-07-01 — a key revoked after that date is not reflected."
+      }
+    },
+    {
+      "name": "equal_version_no_rollback",
+      "version": 9,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1783036800000,
+      "last_seen_version": 9,
+      "expect": {
+        "age_days": 2,
+        "stale": false,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v9 dated 2026-07-01 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v9 dated 2026-07-01 — a key revoked after that date is not reflected."
+      }
+    },
+    {
+      "name": "future_manifest_clamps_age_to_zero",
+      "version": 7,
+      "generated_at_ms": 1783036800000,
+      "now_ms": 1782864000000,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 0,
+        "stale": false,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v7 dated 2026-07-03 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v7 dated 2026-07-03 — a key revoked after that date is not reflected."
+      }
+    },
+    {
+      "name": "same_instant_age_zero",
+      "version": 7,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1782864000000,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 0,
+        "stale": false,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected."
+      }
+    },
+    {
+      "name": "sub_day_floor_under_one_day",
+      "version": 7,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1782950399999,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 0,
+        "stale": false,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v7 dated 2026-07-01 — a key revoked after that date is not reflected."
+      }
+    },
+    {
+      "name": "large_version_max_safe_int",
+      "version": 9007199254740991,
+      "generated_at_ms": 1782864000000,
+      "now_ms": 1783036800000,
+      "last_seen_version": -1,
+      "expect": {
+        "age_days": 2,
+        "stale": false,
+        "rollback_detected": false,
+        "verdict_line": "Signature valid. Revocation checked against trust manifest v9007199254740991 dated 2026-07-01 — a key revoked after that date is not reflected.",
+        "revocation_note": "Revocation checked against trust manifest v9007199254740991 dated 2026-07-01 — a key revoked after that date is not reflected."
+      }
+    }
+  ]
+}

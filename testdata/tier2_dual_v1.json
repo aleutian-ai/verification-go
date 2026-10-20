@@ -1,0 +1,33 @@
+{
+  "schema": "tier2_dual_v1",
+  "bundle_id": "bundle_01HXFIXTURE_DUAL",
+  "primary_seed_hex": "52e64225f1958a7fc5e9826b1cfd13f1d5a1afc0f811bcd778164e23fc3f8a74",
+  "primary_fp": "c1f8be542996485318eb8929d8e9ef05",
+  "backup_seed_hex": "7fcca0a5c1c3a48ae7b7a817eb670b065b313d7d0aeb519055005dc163801e1a",
+  "backup_fp": "d6513f764535f4689a1b60df76daeaa9",
+  "expected_cek_hex": "f02b5e4f6ca966cce58893ab7773b4185594f620f846235818d393a29782c60a",
+  "wrong_seed_hex": "66165231fb61936d88bfc81e7ca9505c2991796b04018008c5e7206f9c21c622",
+  "manifest": {
+    "tier2": {
+      "mode": "standard",
+      "pubkey_count": 2,
+      "cek_envelopes": [
+        {
+          "pubkey_fingerprint": "c1f8be542996485318eb8929d8e9ef05",
+          "kem_ciphertext": "JNTZDkUNGpwSgrRYpAJ9cw3g3cc6WJRZtJ3B6ftZ+4fttxttLu1tr+xzDSY2s+aBIUaUQmaazrSdMpvau1w3p5k/dWhxE+2ZnU+w6Zg5hLj3jNDD2LYJhmokDxE0HG/S3BQaWADm38rEPUjvxztRjMyw3CcbLjL9MCf2ZmQTqnDmhVH1jrqf3XcfMSNGl2Ib19q+72MHXycK6w2x7L4weUqSr+5RzIPAtwdT2FxsR7/9x23skYjkpVv0fwZ6VIj4qSi8Ei7J2wkHsFJWRnHsK6Q6U4oEgcfK3yqDfu/4cFIzXUSoG5rEsOy9+lHd/LoYr3blF1KN+GZAZ8JXNGG80fi/9iz/UFG3YsOkIgbbl/dHCo0pMEP2M8e7CtDrz3ATVT+HvRFUGTsORrqDHCNS9NQ2H4CpJ2Z30IoZL6ni+ZQMoPhFRresuM0ApbG9Lf89mQ3WDGgIjIwcoQJLEaiVfaECz30JTrUNkz4jfWL3DMR0gqljWrapQaQ+HCcLaD+ki4JUS9GVLB/XjdTbVPX70R/fylDSknqwEF00WOfPgfE8c7s/xEQmLgZ9SyT0No9Y84w8cb99macFZRmM5WzTcEf7cnHPDorZI2FD1A4Ub+hl/Now2edECHfvVhJw3T4aYmUoRwXHk9TVkoW0H/5sYXatLzMXQnfqiP6IGxdUKr0pgYGxf5XeoPH9g/6pWMixa8piryla+EGEP4tpZdMemuGH2obtHGCO9yI5Fd78QpYlV5cAvyNtpHQ/za8K5KHEtwn+zWG+X+OleLchD2p4vcSsBgNvAbzpWzPYPyTT0nb1ruBYdupgPLFxm1qPzx+Pqg1Am9sZ5K69fTLz0k5mm/VDK0j6czBW0tZA712jLhLjGsWrVYpYNPVcsYCk/zw0Z9yobw6s3zb43o7JoJBNPJm5jxkd/zGhC8z9WMv2OqvxgKE/jgaU6muV3dF0QPdcHW3gykAulAG8O5fB+/l+AlYqWKoil3KXuOkpoMgn0ePuRMKtgUR1+dSINm842jkGdSq+PtoNdRsr8R8cmrOZnanCe6NvaqzNwNncYU0pvLAeMCDCrsIggu9qxRg8N2yicIBEkzs1SUkf0MKK7+fWP1gxqTZNWwag61DvlWr49R7Cj1NXkUTrm4qEXc5Gl1bf/6gN5LTGKKPhC6UxcXTvzD85WcHApedzO5Tb04mGdT0IvqcMwdVzgbk6VrPMgcuiV+EjWS0367odbomgJ7y1CE42icgUcL51rGrUHFmSRyZaAaYzr1qIV28kkO6PDKoCIB8srdRp3xB/odKolT1Ylzb0v/yQ8miJZOjdAmDixKKj6Uwc4LuzDi1Dgiehq+/+rknrhsbHpRN/S+sTpfkU7PCsoJMpWpX4U6onzAyig9G7bYtnfrngNjp3KSzc6Q1BXdwHCPKpE3FlbydMmVo2UbhsD1OygV9Wd01rEfsK4MfAoHUyLcAMPX/BB4VTUBzkHvSl5h4Zyf3Dvg/TnAVCJw==",
+          "wrap_nonce": "O1X7kwYYR9DctJBr",
+          "wrap_ciphertext": "Jxjgi6SsEQIqubjBDDh2oh19VbyE9K6pCnwXStQXXu4pBdtBFIw3H9qWFZEYT2KU",
+          "encapsulated_at_ms": 1748800000000
+        },
+        {
+          "pubkey_fingerprint": "d6513f764535f4689a1b60df76daeaa9",
+          "kem_ciphertext": "7UwTMqUcuTupFSxQGhgUsQlPQX/zaTA7mW0MiXKmtSf8XNkLzxOeJrYTpioxocZV9PWV80bZzrhX3p5RalRfa8ThXFdZKg/iLzlH++49TA1WeANjLncrH8jHPvddagzMeRrJGUcJe28qXVuu8bK0/7bCts8rMNBCeVOwfl5FUKKpFBnXjowhXDQ+IZM00IJWyTxt7CEshFSXHrIPK67fCgH9S7j01GxNHlh//nmUa7taUeewUL9G8loaQDJ2ansDzXkwzi+2hqlLzgUNR3Dc4QbULQ55qhxLQhnhaItmb7NEBhW8pbb/XJOpzpME7EtggdZWSz9Xn1AK0Ql45CdvvohyK5Im8DJjg1Xb4m5TiXVzhXGPcx+2JlCW/RSG3ifKtGXO3GoHXaIugKEXlH+KjEasmIiRWy0RWd6wDN7pnHfNNlyVr/0RCfxDGaerQZBoOEmMeWzvpbJov2oBVdJMgcdq69mFGI8SkMCpwSJW0dU9BjdflIBk16oI5Zaz+6BG/zsK8xAVoZhyJ947h2FtgioNX7ikcBnuTO5VJfq0WYTdC5+ZiHoDzPipEiDDCe4VVJv7uMWLXghR0G0SWjWY8LJXA3/vaXWF/yltcKNGVCgun4Fpd67W+uA23plPYWkvlA+qQu63BxEWP4G/ND4A4haAcGCYyYl74ud5iOZPV1hYdnPO6IgFFpDfnTMNVRTPXC77Q/Q1woTBqpszKpIIP2xUR1HmY/QDrHImChvZku6RvH+RWgELsZR6C7xyFmGH3x9JSjma8Negecp1pCuY8XfQH2UjsWutcqNneIxuEUVbTxAtXNmxEbGDbk9AD1qkNTZOgmAkXDTwubE6TrueU98ZYlpXihOdIGYATT4bGdsnuhNTVvL6tEHP3I287r1P4cG6u2ynXQtR8btmOl6qMzNd0Zx8cIRhhR6wa/a8JlzrCb2LPIb90QIAKanqf609fTAV94KQCHKwUPerNYrZ9tDVhkypd8lPxoROBrJZw9iDXfWfA3si9s/CCThEj2M/ibpt9gjXNoEStvd36YsAL5Cw2bIV4O0wvBh97K8i3CQm11/BET5e0zjvtgfFJqD7g3bRevF3ez88m4Vix8wamD6gcNHuPgX4Y116oZfyOofi34XToVl14+ky1cuCx+RUueck+tCbsG1wd7iP94H1Iyvwt5Hia1mBISNAZ4MhHmbIv5V/SJ8w2u8C8sMC74FQPABoUiEU+dqeI+R58laVJlpH1y3b0b24cxTkMgP7Eydvyv7bN5jzLAPRr4mdVYUZo1Wkggm0gzNQFw/ae4eDvHD+UeAPGnKKKhxTk8K/cAnLY+lqxcm6T14QoNdTtUU+lQL7tvckzgAso0i5bCLR65h8PYio0qKldRReloGwHdmIE0s2PBYEaHVzXvr4P9VWePVj0gD2kMYbtlQQZ5j+Ig2yTEG1CMCfLK0ruT8lS8YxTL1kxElMRpZ5jlDTZolI2PMWdkGKkzmmeb9nMQADUg==",
+          "wrap_nonce": "vOGzDzm3S+L/yVYr",
+          "wrap_ciphertext": "UASFWfns5SSDz0n3TPxCFag1NHEuDcLH1iWMYqzQvOygyzlayW6waVw9JtFLqHsl",
+          "encapsulated_at_ms": 1748800000500
+        }
+      ]
+    }
+  },
+  "description": "Dual-recipient Tier-2 fixture produced by the proprietary internal/crypto/tier2envelope sealer. Either primary_seed_hex or backup_seed_hex opens the bundle to expected_cek_hex. wrong_seed_hex must fail with ErrNoMatchingRecipient."
+}

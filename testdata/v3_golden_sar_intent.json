@@ -1,0 +1,60 @@
+{
+  "$schema_comment": "chain_b cross-language v3 golden vectors for sar_intent. Each vector lists the input fields, the expected canonical-bytes hex (length-prefixed TLV per pqc_05c v3 §3 + §4.5), and the expected content_hash hex (SHA-512 of 'aleutian.chain.entry.v3:' || canonical_bytes). Cross-language verifier ports (Python in chain_e, JS in chain_f) read this file and assert byte + hash equality on their re-encode. Hashes baked from the Go encoder 2026-05-10 via TestBakeV3SARFixtures.",
+  "domain_prefix_v3": "aleutian.chain.entry.v3:",
+  "entry_type": "sar_intent",
+  "vectors": [
+    {
+      "$comment": "Empty idempotency_key_hash + reason_hash (caller supplied neither). Validates the optional-SHA-512-hex empty-string path.",
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000a7361725f696e74656e7400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e00000000000000001a3031484b374242424242424242424242424242424242424242420000000661636365737300000003616c6c00000006706f7274616c",
+      "expected_content_hash_sha512_hex": "e0470089758aa3cffa70c2d90048ad0f9b18dd4aa0ac1f0757a30e71c553736b53aa13b4dbab0e024907783dba1a3fa4ef437b1f8d0a28d8db0edf637f99949a",
+      "input": {
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_intent",
+        "reason_hash": "",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "sar_type": "access",
+        "scope": "all",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "source_channel": "portal",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "sar_intent_minimal"
+    },
+    {
+      "$comment": "Both hashes populated, source_channel=api, sar_type=both. Exercises every body field at non-empty values.",
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000a7361725f696e74656e7400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e000000008062626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262620000001a3031484b3742424242424242424242424242424242424242424200000004626f746800000003616c6c00000003617069",
+      "expected_content_hash_sha512_hex": "b15023b8d8f8ca28096a713c490c091f1d09dc3a7de8e84ec26e53c18db692af1c2b01eb0a2df78fff0ad3c23eb4e59a5c29d71b31811570012a8fd1fee1974d",
+      "input": {
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_intent",
+        "reason_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "sar_type": "both",
+        "scope": "all",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "source_channel": "api",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "sar_intent_full"
+    },
+    {
+      "$comment": "pii_hmac_key_rotation_R4: versioned reason_hash leaf (pii_digest_key_version=sm:v1) emitted at the alphabetical-first body slot. Proves cross-language byte-identity of the versioned SAR canonical (R6 review M2).",
+      "expected_canonical_bytes_hex": "0000001f636f6d705f3031484b374141414141414141414141414141414141414141410000000a7361725f696e74656e7400000015616e63686f722d7369676e65722d323032362d76310000018f4df73e0000000005736d3a76310000008062626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262620000001a3031484b374242424242424242424242424242424242424242420000000661636365737300000003616c6c00000006706f7274616c",
+      "expected_content_hash_sha512_hex": "ecdf02930893f1b6efd899d54796c917779bb41636b12712d93a7cc98c528af5b86abb9cc6b85c80258ce2a7458909a6134c43205b4287396ea7bb6181a3ab2f",
+      "input": {
+        "company_id": "comp_01HK7AAAAAAAAAAAAAAAAAAAAA",
+        "entry_type": "sar_intent",
+        "pii_digest_key_version": "sm:v1",
+        "reason_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "request_id": "01HK7BBBBBBBBBBBBBBBBBBBBB",
+        "sar_type": "access",
+        "scope": "all",
+        "signing_key_id": "anchor-signer-2026-v1",
+        "source_channel": "portal",
+        "timestamp_ms": 1715000000000
+      },
+      "name": "sar_intent_versioned"
+    }
+  ],
+  "version": 3
+}

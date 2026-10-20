@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "encoder_version": "v2",
+  "vectors": [
+    {
+      "name": "zk_with_uuid",
+      "mode": "zk",
+      "set_by_event_id": "550e8400-e29b-41d4-a716-446655440000",
+      "expected_canonical_hex": "000000027a6b0000002435353065383430302d653239622d343164342d613731362d343436363535343430303030"
+    },
+    {
+      "name": "pii_inspection_with_uuid",
+      "mode": "pii_inspection",
+      "set_by_event_id": "550e8400-e29b-41d4-a716-446655440000",
+      "expected_canonical_hex": "0000000e7069695f696e7370656374696f6e0000002435353065383430302d653239622d343164342d613731362d343436363535343430303030"
+    },
+    {
+      "name": "zk_with_bootstrap",
+      "mode": "zk",
+      "set_by_event_id": "system:bootstrap",
+      "expected_canonical_hex": "000000027a6b0000001073797374656d3a626f6f747374726170"
+    },
+    {
+      "name": "zk_with_erasure",
+      "mode": "zk",
+      "set_by_event_id": "system:erasure:550e8400-e29b-41d4-a716-446655440000",
+      "expected_canonical_hex": "000000027a6b0000003373797374656d3a657261737572653a35353065383430302d653239622d343164342d613731362d343436363535343430303030"
+    },
+    {
+      "name": "zk_with_revoke_pending",
+      "mode": "zk",
+      "set_by_event_id": "system:revoke_pending:550e8400-e29b-41d4-a716-446655440000",
+      "expected_canonical_hex": "000000027a6b0000003a73797374656d3a7265766f6b655f70656e64696e673a35353065383430302d653239622d343164342d613731362d343436363535343430303030"
+    },
+    {
+      "name": "pii_inspection_second_uuid",
+      "mode": "pii_inspection",
+      "set_by_event_id": "0193a8b4-7f12-4c8d-9e2a-1f5b8c9d0e3a",
+      "expected_canonical_hex": "0000000e7069695f696e7370656374696f6e0000002430313933613862342d376631322d346338642d396532612d316635623863396430653361"
+    },
+    {
+      "name": "zk_uuid_variant_8",
+      "mode": "zk",
+      "set_by_event_id": "0193a8b4-7f12-4c8d-8e2a-1f5b8c9d0e3a",
+      "expected_canonical_hex": "000000027a6b0000002430313933613862342d376631322d346338642d386532612d316635623863396430653361"
+    },
+    {
+      "name": "pii_inspection_uuid_variant_a",
+      "mode": "pii_inspection",
+      "set_by_event_id": "0193a8b4-7f12-4c8d-ae2a-1f5b8c9d0e3a",
+      "expected_canonical_hex": "0000000e7069695f696e7370656374696f6e0000002430313933613862342d376631322d346338642d616532612d316635623863396430653361"
+    }
+  ],
+  "parser_reject_inputs": [
+    "",
+    "ZK",
+    "zk\u0000",
+    "zk ",
+    " zk",
+    "pii-inspection",
+    "pii_inspection\n",
+    "pii_inspection​"
+  ]
+}
